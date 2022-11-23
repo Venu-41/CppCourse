@@ -48,7 +48,7 @@ bool Testfunc(string funName, T a, T b, U checkvalue)
 int main(int argc, char const *argv[])
 {
    
-  /*  // Addition test cases
+    // Addition test cases
     cout << "Testcase 1" << endl;
     int a = 2147483647; int b = 10; int c = 2147483657;
     assert(!Testfunc("add", a, b, c) );
@@ -126,7 +126,7 @@ int main(int argc, char const *argv[])
     cout << "Testcase 19" << endl;
     assert(Testfunc("mul", a18, b18, c18) );
     int a19  = 5658552, b19 = -10; int c19 = -56585520;
-    assert(Testfunc("mul", a19, b19, c19) ); */
+    assert(Testfunc("mul", a19, b19, c19) ); 
 
     // signed int
 //// OUTOF RANGE 
