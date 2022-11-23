@@ -52,7 +52,7 @@ template <class T> T mul(T a, T b,T highestValue, T lowestValue)
         return (a*b);
     }
     else
-        cout << "Results exceeds the Range of datatype" << endl;
+        cout << "     Results exceeds the Range of datatype" << endl;
         return false;
 }
 

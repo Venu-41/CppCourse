@@ -48,7 +48,7 @@ bool Testfunc(string funName, T a, T b, U checkvalue)
 int main(int argc, char const *argv[])
 {
    
-    // Addition test cases
+  /*  // Addition test cases
     cout << "Testcase 1" << endl;
     int a = 2147483647; int b = 10; int c = 2147483657;
     assert(!Testfunc("add", a, b, c) );
@@ -96,7 +96,7 @@ int main(int argc, char const *argv[])
     assert(!Testfunc("sub", a11, b11, c11) ); 
 
     // Multiplication test cases
-
+    // int
 //// OUTOF RANGE - Same sign
     cout << "Testcase 12" << endl;
     int a12  = -2147483648, b12 = -100; long int c12 = 21474836480;
@@ -126,8 +126,26 @@ int main(int argc, char const *argv[])
     cout << "Testcase 19" << endl;
     assert(Testfunc("mul", a18, b18, c18) );
     int a19  = 5658552, b19 = -10; int c19 = -56585520;
-    assert(Testfunc("mul", a19, b19, c19) );
+    assert(Testfunc("mul", a19, b19, c19) ); */
 
+    // signed int
+//// OUTOF RANGE 
+    cout << "Testcase 20" << endl;
+    unsigned int a20  = 4294967295, b20 = 10; unsigned long int c20 = 42949672960;
+    assert(!Testfunc("mul", a20, b20, c20) );
+
+    cout << "Testcase 21" << endl;
+    unsigned int a21  = 10, b21 = 4294967295; unsigned long int c21 = 42949672960;
+    assert(!Testfunc("mul", a21, b21, c21) );
+
+    cout << "Testcase 22" << endl;
+    unsigned int a22  = 100, b22 = 1000; unsigned int c22 = 100000;
+    assert(Testfunc("mul", a22, b22, c22) );
+
+    cout << "Testcase 23" << endl;
+    unsigned int a23  = 2500, b23 = 63; unsigned int c23 = 157500;
+    assert(Testfunc("mul", a23, b23, c23) );
+    
     return 0;
 }
 
