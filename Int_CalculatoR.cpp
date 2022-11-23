@@ -42,13 +42,21 @@ bool Testfunc(string funName, T a, T b, U checkvalue)
             return true;
         else
             return false;
+    }
+
+    else if (funName == "Div")
+    {
+        if (checkvalue==Div(a,b))
+            return true;
+        else
+            return false;
     }    
 }
 
 int main(int argc, char const *argv[])
 {
    
-    // Addition test cases
+    // ****** Addition test cases  ****** //
     cout << "Testcase 1" << endl;
     int a = 2147483647; int b = 10; int c = 2147483657;
     assert(!Testfunc("add", a, b, c) );
@@ -70,7 +78,7 @@ int main(int argc, char const *argv[])
     assert(Testfunc("add", a3, b3, c3) );
 
 
-    // Subtraction test cases
+    // ****** Subtraction test cases   ****** //
     cout << "Testcase 6" << endl;
     int a4 = -2147483638, b4 = 10, c4 = -2147483648;
     assert(Testfunc("sub", a4, b4, c4) );
@@ -95,7 +103,7 @@ int main(int argc, char const *argv[])
     unsigned int a11  = 2, b11 = 4; int c11 = -1;
     assert(!Testfunc("sub", a11, b11, c11) ); 
 
-    // Multiplication test cases
+    // ****** Multiplication test cases   ****** //
     // int
 //// OUTOF RANGE - Same sign
     cout << "Testcase 12" << endl;
@@ -145,6 +153,28 @@ int main(int argc, char const *argv[])
     cout << "Testcase 23" << endl;
     unsigned int a23  = 2500, b23 = 63; unsigned int c23 = 157500;
     assert(Testfunc("mul", a23, b23, c23) );
+    
+    // ****** Division test cases ****** //
+    cout << "Testcase 24" << endl;
+    int a24  = -2147483648, b24 = -50; int c24 = 42949672;
+    assert(Testfunc("Div", a24, b24, c24) );
+
+    cout << "Testcase 25" << endl;
+    int a25  = 2147483647, b25 = 50; int c25 = 42949672;
+    assert(Testfunc("Div", a25, b25, c25) );
+
+    cout << "Testcase 26" << endl;
+    int a26  = 50, b26 = 2147483647; int c26 = 0;
+    assert(Testfunc("Div", a26, b26, c26) );
+    cout << "Testcase 26" << endl;
+
+    cout << "Testcase 27" << endl;
+    int a27  = -2147483648, b27 = 50; int c27 = -42949672;
+    assert(Testfunc("Div", a27, b27, c27) );
+
+    cout << "Testcase 28" << endl;
+    unsigned int a28  = 4294967295, b28 = 0; unsigned int c28 = 42949672;
+    assert(!Testfunc("Div", a28, b28, c28) );
     
     return 0;
 }

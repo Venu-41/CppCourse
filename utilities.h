@@ -58,5 +58,11 @@ template <class T> T mul(T a, T b,T highestValue, T lowestValue)
 
 template <class T> T Div(T a, T b)
 {
+    if (b==0)
+    {
+        cout << "     Results NAN due 1/0 division" << endl;
+        return false;
+    }
+    
     return (a/b);
 }
