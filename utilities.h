@@ -35,37 +35,25 @@ template <class T> T sub(T a, T b,T highestValue, T lowestValue)
 template <class T> T mul(T a, T b,T highestValue, T lowestValue)
 {
   
-    if ( a<0 && b<0 )
+    if( ( a<0 && b<0 ) && ((a >= highestValue/b ) || (b >= highestValue/a) ) ) 
     {
-        if((a >= highestValue/b ) || (b >= highestValue/a) )
-            return (a*b);
-        else
-            cout << "Results exceeds the Range of datatype" << endl;
+       return (a*b);
     }
-    else if(a>0 && b>0)
+    else if( (a>0 && b>0) && ((a <= highestValue/b ) || (b <= highestValue/a) ) )
     {
-        if((a <= highestValue/b ) || (b <= highestValue/a) )
-            return (a*b);
-        else
-            cout << "Results exceeds the Range of datatype" << endl;
+        return (a*b);
     }
-    else if(a<0 && b>0)
+    else if( (a<0 && b>0) && a >= lowestValue/b)
     {
-        bool q = a >= lowestValue/b; bool w = b <= lowestValue/a;
-        if(q)
-            return (a*b);
-        else
-            cout << "Results exceeds the Range of datatype" << endl;
+        return (a*b);
+    }
+    else if( (a>0 && b<0) && a <= lowestValue/b)
+    {
+        return (a*b);
     }
     else
-    {
-        bool q = a <= lowestValue/b; bool w = b >= lowestValue/a;
-        if(q)
-            return (a*b);
-        else
-            cout << "Results exceeds the Range of datatype" << endl;
-    }
-    return false;
+        cout << "Results exceeds the Range of datatype" << endl;
+        return false;
 }
 
 template <class T> T Div(T a, T b)
